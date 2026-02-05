@@ -1,0 +1,202 @@
+/* GLOBAL RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-dark: #020617;
+  --bg-mid: #0f172a;
+  --card: #0b1220;
+  --primary: #22c55e;
+  --danger: #ef4444;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #1f2937;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at center, #1e293b 0%, #020617 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+/* APP CONTAINER */
+.container {
+  width: min(92%, 860px);
+  padding: 42px;
+  background: linear-gradient(180deg, #0b1220, #020617);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* ENTRY SECTION */
+.entry-section {
+  margin-bottom: 28px;
+}
+
+.entry-section h1 {
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* Form */
+#itemEntryForm {
+  display: flex;
+  gap: 12px;
+}
+
+#itemEntryForm input {
+  flex: 1;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+#itemEntryForm input::placeholder {
+  color: var(--muted);
+}
+
+#itemEntryForm input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4);
+}
+
+#itemEntryForm button {
+  background: var(--primary);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: #052e16;
+}
+
+#itemEntryForm button:hover {
+  opacity: 0.9;
+}
+
+/* LIST CONTAINER */
+.listContainer {
+  margin-top: 10px;
+  border-top: 1px dashed var(--border);
+  padding-top: 18px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+/* Header */
+.listTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.listTitle h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* Clear Button */
+.listTitle__button {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 7px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.listTitle__button:hover {
+  background: var(--danger);
+  color: #ffffff;
+}
+
+/* LIST ITEMS */
+#listItems {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#listItems li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #020617, #020617);
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+#listItems li:hover {
+  background: #020617;
+}
+
+/* Checkbox */
+#listItems li input[type="checkbox"] {
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* Label */
+#listItems li label {
+  flex: 1;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Completed */
+#listItems li.completed label {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+/* Delete Button */
+#listItems li button {
+  background: transparent;
+  border: none;
+  color: var(--danger);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#listItems li button:hover {
+  transform: scale(1.15);
+}
+
+/* SCROLLBAR */
+.listContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+.listContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
